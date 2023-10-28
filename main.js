@@ -72,6 +72,11 @@ function regAdmin() {
             li.appendChild(l);
             document.querySelector('.ul').appendChild(li)
         }
+        if (document.querySelector('.admin-content').classList.contains('hidden')) {
+            document.querySelector('.admin-content').classList.remove('hidden')
+        }
+        src1="./assets/all/2.jpg"
+        document.querySelector('.background').src = src1
     }
 }
 
@@ -85,6 +90,11 @@ function regUser() {
         if (userContent.classList.contains('hidden')) {
             userContent.classList.remove('hidden');
         }
+        if (!document.querySelector('.admin-content').classList.contains('hidden')) {
+            document.querySelector('.admin-content').classList.add('hidden')
+        }
+        src1="./assets/all/1.jpg"
+        document.querySelector('.background').src = src1
     }
 }
 
@@ -116,5 +126,11 @@ if (JSON.parse(localStorage.getItem('isUser'))) {
 if (JSON.parse(localStorage.getItem('isAdmin'))) {
     regAdmin()
 }
+
+document.querySelector('.img-user').addEventListener('click', function() {
+    localStorage.setItem('isUser', JSON.stringify(false))
+    localStorage.setItem('isAdmin', JSON.stringify(false))
+    location.reload();
+})
 
 document.getElementById('form').addEventListener('submit', loginUser)

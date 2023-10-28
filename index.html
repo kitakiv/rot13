@@ -22,11 +22,20 @@
     </header>
     <main>
         <div class="line"></div>
-        <img src="./assets/all/markus-spiske-iar-afB0QQw-unsplash.jpg" alt="" class="background">
-        <div class="user-content">
-            <div class="green">sdfghjkl; sdfghjkl fghjkl</div>
+        <img src="./assets/all/1.jpg" alt="" class="background">
+        <div class="user-content hidden">
+            <div class="green">Welcome User</div>
+            <div class="code">
+                <code><pre>
+                    function encodeToRot13(str) {
+                        const originalAlpha = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+                        const cipher = 'nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM';
+                        return str.replace(/[A-Za-z0-9]/g, (letter) => cipher[originalAlpha.indexOf(letter)]);
+                      }
+                </pre></code>
+            </div>
         </div>
-        <div class="admin-content">
+        <div class="admin-content hidden">
             <div class="white">
                 <div class="topic">Welcome administrator</div>
                 <ul class="ul">

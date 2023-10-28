@@ -2,6 +2,9 @@ html {
     box-sizing: border-box;
     scroll-behavior: smooth;
     font-size: 10px;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
 }
 
 *, *::before, *::after {
@@ -33,6 +36,7 @@ html {
 .img-user {
     width: 5rem;
     height: 5rem;
+    cursor: pointer;
 }
 
 .together {
@@ -62,8 +66,8 @@ html {
 }
 
 .green {
-    max-width: 120rem;
-    min-height: 20rem;
+    width: 120rem;
+    height: 20rem;
     background-color: rgba(4, 151, 55, 0.793);
     border-radius: 2rem;
     margin-left: 2rem;
@@ -85,7 +89,7 @@ html {
     z-index: 1;
     width: 100vw;
     height: 100vh;
-    background-color: aliceblue;
+    background: linear-gradient(#e66465, #9198e5);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -93,6 +97,9 @@ html {
 
 .hidden {
     display: none;
+    width: 0;
+    height: 0;
+    opacity: 0;
 }
 
 .pop-up-content {
@@ -132,6 +139,12 @@ html {
     padding-left: 2rem;
     font-size: 1.5rem;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.user-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .button:hover {
@@ -193,6 +206,20 @@ html {
     flex-direction: column;
     gap: 1.5rem;
 }
+
+.code {
+    margin-top: 5rem;
+    color: rgb(0, 0, 0);
+    width: 95vw;
+    height: 35vh;
+    background-color: rgb(255, 255, 255, 0.9);
+    border-radius: 2rem;
+    padding: 5rem;
+    font-size: 2rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
 
 
 
