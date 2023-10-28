@@ -51,6 +51,19 @@ if (JSON.parse(localStorage.getItem('usersInformation')) === null) {
     localStorage.setItem('adminInformation', JSON.stringify(masSfr(admin)))
 }
 
+function regAdmin() {
+    let flagadmin = JSON.parse(localStorage.getItem('isAdmin'))
+    if (flagadmin) {
+        if (!popUp.classList.contains('hidden')) {
+            popUp.classList.add('hidden');
+        }
+        document.querySelector('.user-admin').innerHTML = 'Admin';
+        if (!userContent.classList.contains('hidden')) {
+            userContent.classList.add('hidden');
+        }
+    }
+}
+
 function regUser() {
     let flagUser = JSON.parse(localStorage.getItem('isUser'))
     if (flagUser) {
@@ -78,6 +91,8 @@ function loginUser() {
     for (let a = 0; a < users.length; a++) {
         if (adminSfr[a].name === `${userFirstNameInput.value}` &&  adminSfr[a].surname === `${userLastNameInput.value}` && adminSfr[a].password === `${userPasswordInput.value}`) {
             console.log('admin')
+            localStorage.setItem('isAdmin', JSON.stringify(true));
+            regAdmin();
         }
     }
 
@@ -85,6 +100,10 @@ function loginUser() {
 
 if (JSON.parse(localStorage.getItem('isUser'))) {
     regUser()
+}
+
+if (JSON.parse(localStorage.getItem('isAdmin'))) {
+    regAdmin()
 }
 
 document.getElementById('form').addEventListener('submit', loginUser)
