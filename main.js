@@ -53,6 +53,7 @@ if (JSON.parse(localStorage.getItem('usersInformation')) === null) {
 
 function regAdmin() {
     let flagadmin = JSON.parse(localStorage.getItem('isAdmin'))
+    let user2 = masSfr(JSON.parse(localStorage.getItem('usersInformation')))
     if (flagadmin) {
         if (!popUp.classList.contains('hidden')) {
             popUp.classList.add('hidden');
@@ -60,6 +61,16 @@ function regAdmin() {
         document.querySelector('.user-admin').innerHTML = 'Admin';
         if (!userContent.classList.contains('hidden')) {
             userContent.classList.add('hidden');
+        }
+        for (let i = 0; i < user2.length; i++) {
+            let li = document.createElement('li')
+            li.classList.add('li')
+            li.innerHTML = `${i + 1}. ${user2[i].name} ${user2[i].surname}`
+            let l = document.createElement('div')
+            l.classList.add('li-1')
+            l.innerHTML = `${user2[i].password}`
+            li.appendChild(l);
+            document.querySelector('.ul').appendChild(li)
         }
     }
 }
